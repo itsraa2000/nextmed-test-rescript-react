@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+--- Section --- 
+1. Login
+2. Register
+3. Profile
+--- Section ---
+*/
+
+
+/* 1.Login */
+
+/* Page */
+.login-page{
+    @apply h-screen w-full mx-auto flex items-center justify-center bg-no-repeat inset-0 bg-cover bg-gray-200
+}
+
+.login-card{
+    @apply bg-white rounded-lg p-5 m-5
+}
+
+.login-cardwrapper{
+    @apply grid xl:grid-cols-5 lg:grid-cols-3 gap-6
+}
+
+.login-left{
+    @apply bg-sky-600 text-white rounded-lg flex flex-col gap-10 h-[500px] w-full p-7
+}
+
+/* Box */
+.login-container{
+    @apply xl:col-span-3 lg:col-span-2 lg:mx-10 my-auto grid 
+}
+
+.login-section{
+    @apply space-y-5 mt-10
+}
+
+/* End Login */
+
+/* 2.Register */
+
+/* Page */
+
+.register-page{
+    @apply h-screen w-full mx-auto flex items-center justify-center bg-no-repeat inset-0 bg-cover bg-gray-200
+}
+
+.register-card{
+    @apply bg-white rounded-lg p-5 m-5
+}
+
+.register-cardwrapper{
+    @apply grid xl:grid-cols-5 lg:grid-cols-3 gap-6
+}
+
+.register-left{
+    @apply bg-sky-600 text-white rounded-lg flex flex-col gap-10 h-[500px] w-full p-7
+}
+
+/* Box */
+.boxregister-container{
+    @apply xl:col-span-3 lg:col-span-2 lg:mx-10 my-auto grid 
+}
+
+.boxregister-section{
+    @apply space-y-5 mt-10
+}
+
+/* End Register */
+
+/* 3.Profile */
+
+/* Page */
+
+.profile-page{
+    @apply h-screen w-full mx-auto flex items-center justify-center bg-no-repeat inset-0 bg-cover bg-gray-200
+}
+
+/* Bio */
+.bio-container{
+    @apply xl:col-span-3 lg:col-span-2 lg:mx-3 my-5 grid 
+}
+
+/* Profile */
+.boxprofile-container{
+    @apply xl:col-span-3 lg:col-span-2 lg:mx-3 my-auto grid
+}
+
+.boxprofile-wrapper{
+    @apply space-y-5 mt-5
+}
+
+/* End Profile */
