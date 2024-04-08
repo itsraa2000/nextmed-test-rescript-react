@@ -1,3 +1,4 @@
+open CardContainer
 @react.component
 let make = () => {
 
@@ -6,20 +7,15 @@ let make = () => {
   }
 
  <div className="login-page">
-    <div className="container 2xl:px-80 xl:px-52">
-      <div className="login-card">
-        <div className="login-cardwrapper">
+    <CardContainer>
           <CardLeft 
             title="Welcome to ours members!!"
             content="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             />
-          <div className="boxregister-container">
-            <div>
-              <h1 className="text-2xl/tight mb-3">{React.string("Sign Up")}</h1>
-              <p className="text-sm font-medium leading-relaxed">
-                {React.string("Let's Get Start.")}
-              </p>
-            </div>
+          <CardRight
+            header="Sign Up"
+            subhead="Welcome to ours members"
+          >
              <div className="boxregister-section">
               <Input 
                 label="Full Name"
@@ -46,9 +42,7 @@ let make = () => {
               label="Sign Up"
             />
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </CardRight>
+    </CardContainer>
   </div>
 }

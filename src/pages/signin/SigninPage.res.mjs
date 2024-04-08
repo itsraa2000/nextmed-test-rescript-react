@@ -3,6 +3,8 @@
 import * as Input from "../../components/input/Input.res.mjs";
 import * as Button from "../../components/button/Button.res.mjs";
 import * as CardLeft from "../../components/card/cardleft/CardLeft.res.mjs";
+import * as CardRight from "../../components/card/cardright/CardRight.res.mjs";
+import * as CardContainer from "../../components/card/cardcontainer/CardContainer.res.mjs";
 import * as JsxRuntime from "react/jsx-runtime";
 import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.res.mjs";
 
@@ -11,74 +13,56 @@ function SigninPage(props) {
     RescriptReactRouter.push("/home");
   };
   return JsxRuntime.jsx("div", {
-              children: JsxRuntime.jsx("div", {
-                    children: JsxRuntime.jsx("div", {
-                          children: JsxRuntime.jsxs("div", {
-                                children: [
-                                  JsxRuntime.jsx(CardLeft.make, {
-                                        title: "Welcome back!!",
-                                        content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-                                      }),
-                                  JsxRuntime.jsxs("div", {
-                                        children: [
-                                          JsxRuntime.jsxs("div", {
-                                                children: [
-                                                  JsxRuntime.jsx("h1", {
-                                                        children: "Sign In",
-                                                        className: "text-2xl/tight mb-3"
-                                                      }),
-                                                  JsxRuntime.jsx("p", {
-                                                        children: "We are here to help you.",
-                                                        className: "text-sm font-medium leading-relaxed"
-                                                      })
-                                                ]
-                                              }),
-                                          JsxRuntime.jsxs("div", {
-                                                children: [
-                                                  JsxRuntime.jsx(Input.make, {
-                                                        label: "Email",
-                                                        type_: "text",
-                                                        name: "email",
-                                                        placeholder: "Enter your email"
-                                                      }),
-                                                  JsxRuntime.jsx(Input.make, {
-                                                        label: "Password",
-                                                        type_: "password",
-                                                        name: "pwd",
-                                                        placeholder: "Enter your password"
-                                                      })
-                                                ],
-                                                className: "login-section"
-                                              }),
-                                          JsxRuntime.jsxs("div", {
-                                                children: [
-                                                  JsxRuntime.jsxs("p", {
-                                                        children: [
-                                                          "Don't have an account?",
-                                                          JsxRuntime.jsx("a", {
-                                                                children: "Sign Up",
-                                                                className: "ms-2 underline text-sky-600",
-                                                                href: "/signup"
-                                                              })
-                                                        ],
-                                                        className: "text-sm text-gray-500"
-                                                      }),
-                                                  JsxRuntime.jsx(Button.make, {
-                                                        label: "Sign in",
-                                                        onClick: onClick
-                                                      })
-                                                ],
-                                                className: "flex flex-wrap items-center justify-between gap-6 mt-8"
-                                              })
-                                        ],
-                                        className: "login-container"
-                                      })
-                                ],
-                                className: "login-cardwrapper"
-                              }),
-                          className: "login-card"
-                        }),
-                    className: "container 2xl:px-80 xl:px-52"
+              children: JsxRuntime.jsxs(CardContainer.CardContainer.make, {
+                    children: [
+                      JsxRuntime.jsx(CardLeft.make, {
+                            title: "Welcome back!!",
+                            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                          }),
+                      JsxRuntime.jsxs(CardRight.make, {
+                            header: "Sign Up",
+                            subhead: "Welcome to ours members",
+                            children: [
+                              JsxRuntime.jsxs("div", {
+                                    children: [
+                                      JsxRuntime.jsx(Input.make, {
+                                            label: "Email",
+                                            type_: "text",
+                                            name: "email",
+                                            placeholder: "Enter your email"
+                                          }),
+                                      JsxRuntime.jsx(Input.make, {
+                                            label: "Password",
+                                            type_: "password",
+                                            name: "pwd",
+                                            placeholder: "Enter your password"
+                                          })
+                                    ],
+                                    className: "login-section"
+                                  }),
+                              JsxRuntime.jsxs("div", {
+                                    children: [
+                                      JsxRuntime.jsxs("p", {
+                                            children: [
+                                              "Don't have an account?",
+                                              JsxRuntime.jsx("a", {
+                                                    children: "Sign Up",
+                                                    className: "ms-2 underline text-sky-600",
+                                                    href: "/signup"
+                                                  })
+                                            ],
+                                            className: "text-sm text-gray-500"
+                                          }),
+                                      JsxRuntime.jsx(Button.make, {
+                                            label: "Sign in",
+                                            onClick: onClick
+                                          })
+                                    ],
+                                    className: "flex flex-wrap items-center justify-between gap-6 mt-8"
+                                  })
+                            ]
+                          })
+                    ]
                   }),
               className: "login-page"
             });

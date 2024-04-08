@@ -3,6 +3,8 @@
 import * as Input from "../../components/input/Input.res.mjs";
 import * as Button from "../../components/button/Button.res.mjs";
 import * as CardLeft from "../../components/card/cardleft/CardLeft.res.mjs";
+import * as CardRight from "../../components/card/cardright/CardRight.res.mjs";
+import * as CardContainer from "../../components/card/cardcontainer/CardContainer.res.mjs";
 import * as JsxRuntime from "react/jsx-runtime";
 import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.res.mjs";
 
@@ -11,67 +13,49 @@ function SignupPage(props) {
     RescriptReactRouter.push("/");
   };
   return JsxRuntime.jsx("div", {
-              children: JsxRuntime.jsx("div", {
-                    children: JsxRuntime.jsx("div", {
-                          children: JsxRuntime.jsxs("div", {
-                                children: [
-                                  JsxRuntime.jsx(CardLeft.make, {
-                                        title: "Welcome to ours members!!",
-                                        content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                                      }),
-                                  JsxRuntime.jsxs("div", {
-                                        children: [
-                                          JsxRuntime.jsxs("div", {
-                                                children: [
-                                                  JsxRuntime.jsx("h1", {
-                                                        children: "Sign Up",
-                                                        className: "text-2xl/tight mb-3"
-                                                      }),
-                                                  JsxRuntime.jsx("p", {
-                                                        children: "Let's Get Start.",
-                                                        className: "text-sm font-medium leading-relaxed"
-                                                      })
-                                                ]
-                                              }),
-                                          JsxRuntime.jsxs("div", {
-                                                children: [
-                                                  JsxRuntime.jsx(Input.make, {
-                                                        label: "Full Name",
-                                                        type_: "text",
-                                                        name: "fullName",
-                                                        placeholder: "Enter your name"
-                                                      }),
-                                                  JsxRuntime.jsx(Input.make, {
-                                                        label: "Email",
-                                                        type_: "text",
-                                                        name: "email",
-                                                        placeholder: "Enter your email"
-                                                      }),
-                                                  JsxRuntime.jsx(Input.make, {
-                                                        label: "Password",
-                                                        type_: "password",
-                                                        name: "pwd",
-                                                        placeholder: "Enter your password"
-                                                      })
-                                                ],
-                                                className: "boxregister-section"
-                                              }),
-                                          JsxRuntime.jsx("div", {
-                                                children: JsxRuntime.jsx(Button.make, {
-                                                      label: "Sign Up",
-                                                      onClick: onClick
-                                                    }),
-                                                className: "flex justify-end items-center gap-6 mt-8"
-                                              })
-                                        ],
-                                        className: "boxregister-container"
-                                      })
-                                ],
-                                className: "login-cardwrapper"
-                              }),
-                          className: "login-card"
-                        }),
-                    className: "container 2xl:px-80 xl:px-52"
+              children: JsxRuntime.jsxs(CardContainer.CardContainer.make, {
+                    children: [
+                      JsxRuntime.jsx(CardLeft.make, {
+                            title: "Welcome to ours members!!",
+                            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                          }),
+                      JsxRuntime.jsxs(CardRight.make, {
+                            header: "Sign Up",
+                            subhead: "Welcome to ours members",
+                            children: [
+                              JsxRuntime.jsxs("div", {
+                                    children: [
+                                      JsxRuntime.jsx(Input.make, {
+                                            label: "Full Name",
+                                            type_: "text",
+                                            name: "fullName",
+                                            placeholder: "Enter your name"
+                                          }),
+                                      JsxRuntime.jsx(Input.make, {
+                                            label: "Email",
+                                            type_: "text",
+                                            name: "email",
+                                            placeholder: "Enter your email"
+                                          }),
+                                      JsxRuntime.jsx(Input.make, {
+                                            label: "Password",
+                                            type_: "password",
+                                            name: "pwd",
+                                            placeholder: "Enter your password"
+                                          })
+                                    ],
+                                    className: "boxregister-section"
+                                  }),
+                              JsxRuntime.jsx("div", {
+                                    children: JsxRuntime.jsx(Button.make, {
+                                          label: "Sign Up",
+                                          onClick: onClick
+                                        }),
+                                    className: "flex justify-end items-center gap-6 mt-8"
+                                  })
+                            ]
+                          })
+                    ]
                   }),
               className: "login-page"
             });
