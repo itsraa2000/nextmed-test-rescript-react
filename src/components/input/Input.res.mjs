@@ -13,7 +13,9 @@ function Input(props) {
                       className: "text-gray-500 border-gray-300 bg-gray-100 text-sm rounded-lg py-2.5 px-4 w-full",
                       name: props.name,
                       placeholder: props.placeholder,
-                      type: props.type_
+                      type: props.type_,
+                      value: props.value,
+                      onChange: props.onChange
                     })
               ]
             });

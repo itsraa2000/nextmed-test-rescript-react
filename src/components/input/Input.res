@@ -4,6 +4,8 @@ let make = (
   ~type_,
   ~name,
   ~placeholder,
+  ~value,
+  ~onChange,
 ) => {         
     <div>
         <label className="font-medium text-sm block mb-2">
@@ -14,6 +16,8 @@ let make = (
             type_={type_}
             name={name}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
         />
     </div>    
 }
