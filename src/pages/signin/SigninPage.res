@@ -12,12 +12,21 @@ let make = () => {
   let (pwd, setPwd) = React.useState(_ => "");
 
   let onClick = (_evt) => {
-      let  user = {
-      email: email,
-      pwd: pwd,
+    let maybeUserJson = Dom.Storage.getItem("user", Dom.Storage.localStorage)
+
+    switch (maybeUserJson) {
+    | Some(userJson) =>
+      let user: user = Js.Json.parseExn(userJson)->Obj.magic
+      if (user.email === email && user.pwd === pwd) {
+        RescriptReactRouter.push("/home")
+      } else {
+        Js.log("Email or Password Invalid!!");
+      }
+    | None =>
+        Js.log("No user data found in local storage")
     }
-      Js.log(user)
-      RescriptReactRouter.push("/home")
+
+
   }
 
 

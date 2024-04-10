@@ -5,6 +5,7 @@ import * as React from "react";
 import * as Button from "../../components/button/Button.res.mjs";
 import * as CardLeft from "../../components/card/cardleft/CardLeft.res.mjs";
 import * as CardRight from "../../components/card/cardright/CardRight.res.mjs";
+import * as Dom_storage from "rescript/lib/es6/dom_storage.js";
 import * as CardContainer from "../../components/card/cardcontainer/CardContainer.res.mjs";
 import * as JsxRuntime from "react/jsx-runtime";
 import * as RescriptReactRouter from "@rescript/react/src/RescriptReactRouter.res.mjs";
@@ -31,7 +32,8 @@ function SignupPage(props) {
       email: email,
       pwd: pwd
     };
-    console.log(newUser);
+    var userJson = JSON.stringify(newUser);
+    Dom_storage.setItem("user", userJson, localStorage);
     setFullName(function (param) {
           return "";
         });

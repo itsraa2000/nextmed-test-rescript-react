@@ -19,8 +19,10 @@ let make = () => {
       email: email,
       pwd: pwd,
     }
-    Js.log(newUser)
+    // Convert user object to JSON string
+    let userJson = Js.Json.stringify(newUser->Obj.magic)
     // Save user to local storage
+    Dom.Storage.setItem("user", userJson, Dom.Storage.localStorage)
     // Reset form fields
     setFullName(_ => "")
     setEmail(_ => "")
