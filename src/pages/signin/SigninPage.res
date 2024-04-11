@@ -37,8 +37,8 @@ let make = () => {
             content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
             />
           <CardRight
-            header="Sign Up"
-            subhead="Welcome to ours members"
+            header="Sign In"
+            subhead="Welcome Back !!"
           >
             <div className="login-section">
               <Input 

@@ -44,8 +44,8 @@ function SigninPage(props) {
                             content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
                           }),
                       JsxRuntime.jsxs(CardRight.make, {
-                            header: "Sign Up",
-                            subhead: "Welcome to ours members",
+                            header: "Sign In",
+                            subhead: "Welcome Back !!",
                             children: [
                               JsxRuntime.jsxs("div", {
                                     children: [
