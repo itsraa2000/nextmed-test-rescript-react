@@ -12,21 +12,21 @@ let make = () => {
   let (pwd, setPwd) = React.useState(_ => "");
 
   let onClick = (_evt) => {
-    let maybeUserJson = Dom.Storage.getItem("user", Dom.Storage.localStorage)
-
-    switch (maybeUserJson) {
+    let oursUser = Dom.Storage.getItem("user", Dom.Storage.localStorage)
+    switch (oursUser) {
     | Some(userJson) =>
       let user: user = Js.Json.parseExn(userJson)->Obj.magic
       if (user.email === email && user.pwd === pwd) {
+        // Save the user data to local storage
+        Dom.Storage.setItem("isLoggedIn", userJson, Dom.Storage.localStorage)
         RescriptReactRouter.push("/home")
       } else {
-        Js.log("Email or Password Invalid!!");
+        Js.log("Email or Password Invalid!!")
       }
     | None =>
-        Js.log("No user data found in local storage")
+      Js.log("No user data found in local storage")
+      RescriptReactRouter.push("/")
     }
-
-
   }
 
 

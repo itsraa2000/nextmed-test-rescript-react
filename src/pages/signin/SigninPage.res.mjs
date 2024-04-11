@@ -22,10 +22,11 @@ function SigninPage(props) {
   var setPwd = match$1[1];
   var pwd = match$1[0];
   var onClick = function (_evt) {
-    var maybeUserJson = Dom_storage.getItem("user", localStorage);
-    if (maybeUserJson !== undefined) {
-      var user = JSON.parse(maybeUserJson);
+    var oursUser = Dom_storage.getItem("user", localStorage);
+    if (oursUser !== undefined) {
+      var user = JSON.parse(oursUser);
       if (user.email === email && user.pwd === pwd) {
+        Dom_storage.setItem("isLoggedIn", oursUser, localStorage);
         return RescriptReactRouter.push("/home");
       } else {
         console.log("Email or Password Invalid!!");
@@ -33,6 +34,7 @@ function SigninPage(props) {
       }
     }
     console.log("No user data found in local storage");
+    RescriptReactRouter.push("/");
   };
   return JsxRuntime.jsx("div", {
               children: JsxRuntime.jsxs(CardContainer.CardContainer.make, {
